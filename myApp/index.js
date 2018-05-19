@@ -7,8 +7,8 @@ app.get("/", function (req, res) {
 })
 
 app.get("/login", function(req, res) {
-  var rm = req.body.rm
-  var 
+  var username = req.body.username
+  var password = req.body.pass
 })
 
 app.listen(3000)
