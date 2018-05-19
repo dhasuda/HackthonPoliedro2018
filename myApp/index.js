@@ -3,7 +3,7 @@ var app = express()
 
 
 app.get("/", function (req, res) {
-  res.render("login.html")
+  res.render("login/login.ejs")
 })
 
 app.get("/login", function(req, res) {
