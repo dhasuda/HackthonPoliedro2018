@@ -9,15 +9,15 @@ exports.signup = function(req, res) {
 }
 
 exports.signupAluno = function(req, res) {
-    res.render('signout.ejs');
+    res.render('signupAluno.ejs');
 }
 
 exports.signupCorretor = function(req, res) {
-    res.render('signout.ejs');
+    res.render('signupCorretor.ejs');
 }
 
 exports.signupCoordenador = function(req, res) {
-    res.render('signout.ejs');
+    res.render('signupCoordenador.ejs');
 }
 
 exports.signin = function(req, res) {
