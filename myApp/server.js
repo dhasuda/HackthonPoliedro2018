@@ -16,6 +16,8 @@ var connection = mysql.createConnection({ // Mysql Connection
     });
 
 
+app.use(express.static(__dirname + '/public'));
+
 //For BodyParser
 app.use(bodyParser.urlencoded({
     extended: true
@@ -60,7 +62,7 @@ var fileRoute = require('./routes/file.js')(app, models);
 var utilsRoute = require('./routes/utils.js')(app);
 
 app.get('/teste', function(req, res) {
-    res.render('assignCorrector.ejs')
+    res.render('login/login.ejs')
 });
 
 //load passport strategies

@@ -2,7 +2,9 @@ var authController = require('../controllers/authcontroller.js');
 
 module.exports = function(app, passport) {
 
-    app.get('/',authController.presignup);
+    app.get('/',authController.signin);
+
+    // app.get('/',authController.presignup);
 
     app.get('/logout',authController.logout);
 
@@ -18,7 +20,9 @@ module.exports = function(app, passport) {
 
     app.get('/signin', authController.signin);
 
-    app.get('/', authController.presignup);
+    app.get('/presignup', authController.presignup);
+
+    // app.get('/', authController.presignup);
 
     app.post('/signup', passport.authenticate('local-signup', {
             successRedirect: '/dashboard',
@@ -31,7 +35,7 @@ module.exports = function(app, passport) {
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
 
-        failureRedirect: '/'
+        failureRedirect: '/presignup'
     }
 
     ));

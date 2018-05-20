@@ -21,7 +21,7 @@ exports.signupCoordenador = function(req, res) {
 }
 
 exports.signin = function(req, res) {
-    res.render('signin.ejs');
+    res.render('login/login.ejs');
 }
 
 exports.dashboard = function(req, res) {
