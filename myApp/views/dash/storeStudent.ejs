@@ -81,7 +81,24 @@
       </div>
     </section>
 
-    <section class="page-section cta">
+
+      <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+
+        <li class="list-unstyled-item list-hours-item d-flex">
+          <center><strong>Redação</strong> </center>
+          <span class="ml-auto">Nota</span>
+        </li>
+
+        <% composition.forEach(function(comp) { %>
+          <li class="list-unstyled-item list-hours-item d-flex">
+            <center><strong><%= comp.type %></strong> </center>
+            <span class="ml-auto"><%= comp.grade %></span>
+          </li>
+        <% }) %>
+      </ul>
+
+
+    <!-- <section class="page-section cta">
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
@@ -138,7 +155,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <footer class="footer text-faded text-center py-5">
       <div class="container">

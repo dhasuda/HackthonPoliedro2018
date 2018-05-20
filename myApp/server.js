@@ -74,7 +74,26 @@ app.get('/productsStudent', function(req, res) {
 });
 
 app.get('/storeStudent', function(req, res) {
-    res.render('dash/storeStudent.ejs')
+
+  var Composition = models.composition
+
+  Composition.findAll({
+      where: {
+          studentEmail: req.user.email,
+          status: 'corrected'
+      }
+  }).then(function(composition) {
+
+      if (!composition) {
+        return res.send("Not found")
+      }
+
+      res.render('dash/storeStudent.ejs', {composition: composition});
+      // res.send(composition)
+
+  }).catch(function(err) {
+      console.log("Error:", err);
+  });
 });
 
 app.get('/homeStudent', function(req, res) {
