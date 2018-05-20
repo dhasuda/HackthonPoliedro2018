@@ -141,6 +141,10 @@ app.get('/downloadComposition/:rm/:week/:type', function(req, res) {
   res.download(filename)
 })
 
+app.get('/goToPaintMode', function(req, res) {
+    res.render('miniPaint-master/index.ejs')
+});
+
 //load passport strategies
 
 require('./config/passport/passport.js')(passport, models.user);
