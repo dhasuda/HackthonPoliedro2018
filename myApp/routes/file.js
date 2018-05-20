@@ -133,4 +133,33 @@ module.exports = function(app, models) {
     });
   });
 
+  app.post('/assignCorrectors', function(req, res) {
+
+    var Composition = models.composition
+
+    Composition.findAll({
+        where: {
+            status: 'notCorrected',
+            about: req.user.about,
+            week: req.body.week
+        }
+    }).then(function(composition) {
+
+        if (!composition) {
+          return res.send("Not found")
+        }
+
+        composition.forEach(function(u) {
+            u.correctorEmail = req.body.correctorEmail;
+            u.save(function (err) {
+            })
+        });
+
+
+    }).catch(function(err) {
+        console.log("Error:", err);
+    });
+
+  });
+
 }
