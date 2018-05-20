@@ -5,19 +5,19 @@ exports.presignup = function(req, res) {
 }
 
 exports.signup = function(req, res) {
-    res.render('signout.ejs');
+    res.render('login/sign_up.ejs');
 }
 
 exports.signupAluno = function(req, res) {
-    res.render('signupAluno.ejs');
+    res.render('login/sign_upAluno.ejs');
 }
 
 exports.signupCorretor = function(req, res) {
-    res.render('signupCorretor.ejs');
+    res.render('login/sign_upCorretor.ejs');
 }
 
 exports.signupCoordenador = function(req, res) {
-    res.render('signupCoordenador.ejs');
+    res.render('login/sign_upCoordenador.ejs');
 }
 
 exports.signin = function(req, res) {

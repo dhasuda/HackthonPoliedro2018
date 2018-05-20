@@ -62,7 +62,7 @@ var fileRoute = require('./routes/file.js')(app, models);
 var utilsRoute = require('./routes/utils.js')(app);
 
 app.get('/teste', function(req, res) {
-    res.render('login/login.ejs')
+    res.render('login/sign_upCorretor.ejs')
 });
 
 //load passport strategies
