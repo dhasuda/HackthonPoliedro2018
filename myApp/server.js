@@ -59,6 +59,10 @@ var authRoute = require('./routes/auth.js')(app,passport);
 var fileRoute = require('./routes/file.js')(app, models);
 var utilsRoute = require('./routes/utils.js')(app);
 
+app.get('/teste', function(req, res) {
+    res.render('assignCorrector.ejs')
+});
+
 //load passport strategies
 
 require('./config/passport/passport.js')(passport, models.user);

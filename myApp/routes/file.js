@@ -154,7 +154,7 @@ module.exports = function(app, models) {
             u.save(function (err) {
             })
         });
-
+        res.send('Saved')
 
     }).catch(function(err) {
         console.log("Error:", err);
