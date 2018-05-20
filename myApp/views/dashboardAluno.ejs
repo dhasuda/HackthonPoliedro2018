@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+  <form ref='uploadForm'
+      id='uploadForm'
+      action='http://localhost:3000/uploadComposition'
+      method='post'
+      encType="multipart/form-data">
+
+        <label for="type">Tipo</label>
+        <input class="text" name="type" type="text" />
+
+        <label for="week">Semana</label>
+        <input class="text" name="week" type="text" />
+
+        <input type="file" name="sampleFile" />
+        <input type='submit' value='Upload!' />
+    </form>
+
+</body>
+
+</html>

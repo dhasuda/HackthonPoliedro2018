@@ -27,7 +27,8 @@ exports.signin = function(req, res) {
 exports.dashboard = function(req, res) {
 
     if (req.user.role == "aluno") {
-      res.send("sou um aluno")
+      // res.send("sou um aluno")
+      res.render('dashboardAluno.ejs')
     }
     else if (req.user.role == "corretor") {
       res.send("Sou um corretor")
