@@ -2,6 +2,74 @@
 
 module.exports = function(app, models) {
 
+  app.get('/getStudentCompositions', function(req, res) {
+
+    var Composition = models.composition
+
+    Composition.findAll({
+        where: {
+            studentEmail: req.user.email
+        }
+    }).then(function(composition) {
+
+        if (!composition) {
+          return res.send("Not found")
+        }
+        res.send(composition)
+    }).catch(function(err) {
+
+        console.log("Error:", err);
+
+    });
+
+  });
+
+  app.get('/getCorrectorCompositions', function(req, res) {
+
+    var Composition = models.composition
+
+    Composition.findAll({
+        where: {
+            correctorEmail: req.user.email
+        }
+    }).then(function(composition) {
+
+        if (!composition) {
+          return res.send("Not found")
+        }
+        res.send(composition)
+    }).catch(function(err) {
+
+        console.log("Error:", err);
+
+    });
+
+  });
+
+  app.get('/getNotCorrectedFromUnit', function(req, res) {
+
+    var Composition = models.composition
+
+    Composition.findAll({
+        where: {
+            status: 'notCorrected',
+            about: req.user.about
+        }
+    }).then(function(composition) {
+
+        if (!composition) {
+          return res.send("Not found")
+        }
+        res.send(composition)
+
+
+
+    }).catch(function(err) {
+        console.log("Error:", err);
+    });
+
+  });
+
   app.post('/uploadComposition', function(req, res) {
     if (!req.files)
       return res.status(400).send('No files were uploaded.');
@@ -21,6 +89,8 @@ module.exports = function(app, models) {
             type: req.body.type,
             week: req.body.week,
             archive: filename,
+            studentEmail: req.user.email,
+            about: req.user.about,
             grade: -1
         };
 

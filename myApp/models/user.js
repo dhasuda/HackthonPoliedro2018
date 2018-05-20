@@ -22,13 +22,17 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.TEXT
         },
 
+        // Unidade
         about: {
+            type: Sequelize.TEXT
+        },
+
+        class: {
             type: Sequelize.TEXT
         },
 
         email: {
             type: Sequelize.STRING,
-
         },
 
         password: {

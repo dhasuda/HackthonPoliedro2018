@@ -22,7 +22,7 @@ module.exports = function(sequelize, Sequelize) {
 
         status: {
             type: Sequelize.ENUM('notDelivered', 'notCorrected', 'corrected'),
-            defaultValue: 'notDelivered'
+            defaultValue: 'notCorrected'
         },
 
         grade: {
@@ -57,7 +57,16 @@ module.exports = function(sequelize, Sequelize) {
           type: Sequelize.STRING
         },
 
+        // Unidade
+        about: {
+            type: Sequelize.TEXT
+        },
+
         studentEmail: {
+          type: Sequelize.STRING,
+        },
+
+        correctorEmail: {
           type: Sequelize.STRING,
         }
 
