@@ -92,6 +92,7 @@ module.exports = function(app, models) {
         composition.grade3 = req.body.grade3;
         composition.grade4 = req.body.grade4;
         composition.grade5 = req.body.grade5;
+        composition.comments = req.body.comments;
         composition.save()
 
         let sampleFile = req.files.sampleFile;
