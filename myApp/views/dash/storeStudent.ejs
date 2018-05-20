@@ -91,8 +91,9 @@
 
         <% composition.forEach(function(comp) { %>
           <li class="list-unstyled-item list-hours-item d-flex">
-            <center><strong><%= comp.type %></strong> </center>
-            <span class="ml-auto"><%= comp.grade %></span>
+            <strong><span class="ml-auto"><a href=<%="/downloadComposition/" + comp.studentEmail + "/" + comp.week + "/" + comp.type %> ><%= comp.type %></a></span></strong>
+            <!-- <center><strong><%= comp.type %></strong> </center> -->
+            <span class="ml-auto"><%= comp.grade %> = <%= comp.grade1 %> + <%= comp.grade2 %> + <%= comp.grade3 %> + <%= comp.grade4 %> + <%= comp.grade5 %> </span>
           </li>
         <% }) %>
       </ul>
