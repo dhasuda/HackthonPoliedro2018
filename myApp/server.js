@@ -1,10 +1,19 @@
 var express = require('express')
 var app = express()
 var passport = require('passport')
+var fileUpload = require('express-fileupload');
 var session = require('express-session')
 var bodyParser = require('body-parser')
 var env = require('dotenv').load()
 var exphbs = require('express-handlebars')
+var mysql = require('mysql'); // Mysql include
+
+var connection = mysql.createConnection({ // Mysql Connection
+        host     : 'localhost',
+        user     : 'root',
+        password : 'password',
+        database : 'sequelize_passport',
+    });
 
 
 //For BodyParser
@@ -23,6 +32,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+// For file upload
+app.use(fileUpload());
 
 //For Handlebars
 app.set('views', './views')
@@ -45,12 +56,16 @@ var models = require("./models");
 //Routes
 
 var authRoute = require('./routes/auth.js')(app,passport);
+var fileRoute = require('./routes/file.js')(app, models);
+var utilsRoute = require('./routes/utils.js')(app);
 
+app.get('/teste', function(req, res) {
+    res.render('assignCorrector.ejs')
+});
 
 //load passport strategies
 
 require('./config/passport/passport.js')(passport, models.user);
-
 
 //Sync Database
 
