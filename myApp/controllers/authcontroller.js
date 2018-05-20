@@ -2,7 +2,7 @@ var exports = module.exports = {}
 
 exports.signup = function(req, res) {
 
-    res.render('login/login.ejs');
+    res.render('signout.ejs');
 
 }
 
