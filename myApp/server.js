@@ -136,6 +136,11 @@ app.get('/teste', function(req, res) {
     res.render('dash/homeTeacher.ejs')
 });
 
+app.get('/downloadComposition/:rm/:week/:type', function(req, res) {
+  var filename = __dirname + "/compositions/" + req.params.rm + "&&" + req.params.week + "&&" + req.params.type + ".png";
+  res.download(filename)
+})
+
 //load passport strategies
 
 require('./config/passport/passport.js')(passport, models.user);

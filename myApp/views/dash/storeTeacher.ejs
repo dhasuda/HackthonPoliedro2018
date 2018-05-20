@@ -91,7 +91,7 @@
       <% composition.forEach(function(comp) { %>
         <li class="list-unstyled-item list-hours-item d-flex">
           <%= comp.type %> - <%= comp.week %> - <%= comp.studentEmail %>
-          <span class="ml-auto"><a href="#">Download</a></span>
+          <span class="ml-auto"><a href=<%="/downloadComposition/" + comp.studentEmail + "/" + comp.week + "/" + comp.type %> >Download</a></span>
         </li>
       <% }) %>
 
