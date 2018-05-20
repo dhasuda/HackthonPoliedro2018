@@ -38,8 +38,8 @@ module.exports = function(passport, user) {
     passport.use('local-signup', new LocalStrategy(
 
         {
-            usernameField: 'username',
-            passwordField: 'pass',
+            usernameField: 'email',
+            passwordField: 'password',
             passReqToCallback: true // allows us to pass back the entire request to the callback
         },
 
