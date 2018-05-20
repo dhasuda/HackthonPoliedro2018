@@ -70,6 +70,46 @@ module.exports = function(app, models) {
 
   });
 
+  app.post('/uploadCorrection', function(req, res) {
+    var Composition = models.composition
+
+    Composition.findOne({
+        where: {
+            studentEmail: req.body.email,
+            type: req.body.type,
+            week: req.body.week
+        }
+    }).then(function(composition) {
+
+        if (!composition) {
+          return res.send("Not found")
+        }
+
+        composition.status = 'corrected';
+        composition.grade = req.body.grade;
+        composition.grade1 = req.body.grade1;
+        composition.grade2 = req.body.grade2;
+        composition.grade3 = req.body.grade3;
+        composition.grade4 = req.body.grade4;
+        composition.grade5 = req.body.grade5;
+        composition.save()
+
+        let sampleFile = req.files.sampleFile;
+            filename = sampleFile.name;
+            filename = req.user.email + "&&" + req.body.week + "&&" + req.body.type + ".png";
+
+        sampleFile.mv('./compositions/' +  filename, function(err) {
+          if (err)
+            return res.status(500).send(err);
+        });
+
+        res.send("Sended")
+
+    }).catch(function(err) {
+        console.log("Error:", err);
+    });
+  });
+
   app.post('/uploadComposition', function(req, res) {
     if (!req.files)
       return res.status(400).send('No files were uploaded.');

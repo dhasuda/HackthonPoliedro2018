@@ -120,55 +120,77 @@
         <span class="ml-auto"><a href="#">Download</a></span>
       </li> -->
     </ul>
+    <form method="POST" action="uploadCorrection" enctype="multipart/form-data" align="center">
 
-    <br>
-    <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-      <li class="list-unstyled-item list-hours-item d-flex">
-        <a href="/goToPaintMode">Selecionar - </a> Redação do Computador
-      </li>
-    </ul>
-    <br>
+      <br>
+      <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+        <li class="list-unstyled-item list-hours-item d-flex">
+          <a href="/goToPaintMode">Selecionar - </a> Redação do Computador
+        </li>
+      </ul>
+      <br>
 
-    <div class="wrap-input100 validate-input" data-validate="Name is required" align="center">
-      <span class="label-input100">Critério 1 ..</span>
-      <input class="input100" type="text" name="name" placeholder="Nota ..">
-      <span class="focus-input100"></span>
-    </div>
+      <div class="wrap-input100 validate-input" data-validate="Name is required" align="center">
+        <span class="label-input100">RM do aluno</span>
+        <input class="input100" type="text" name="email" placeholder="Nota ..">
+        <span class="focus-input100"></span>
+      </div>
+      <br>
 
-    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz" align="center">
-      <span class="label-input100">Critério 2 ..</span>
-      <input class="input100" type="text" name="email" placeholder="Nota ..">
-      <span class="focus-input100"></span>
-    </div>
+      <div class="wrap-input100 validate-input" data-validate="Name is required" align="center">
+        <span class="label-input100">Tipo da redação</span>
+        <input class="input100" type="text" name="type" placeholder="Nota ..">
+        <span class="focus-input100"></span>
+      </div>
+      <br>
 
-    <div class="wrap-input100 validate-input" data-validate="Username is required" align="center" align="center">
-      <span class="label-input100">Critério 3 ..</span>
-      <input class="input100" type="text" name="username" placeholder="Nota ..">
-      <span class="focus-input100"></span>
-    </div>
+      <div class="wrap-input100 validate-input" data-validate="Name is required" align="center">
+        <span class="label-input100">Semana</span>
+        <input class="input100" type="text" name="week" placeholder="Nota ..">
+        <span class="focus-input100"></span>
+      </div>
+      <br>
 
-    <div class="wrap-input100 validate-input" data-validate="Username is required" align="center" align="center">
-      <span class="label-input100">Critério 4 ..</span>
-      <input class="input100" type="text" name="username" placeholder="Nota ..">
-      <span class="focus-input100"></span>
-    </div>
+      <div class="wrap-input100 validate-input" data-validate="Name is required" align="center">
+        <span class="label-input100">Critério 1 ..</span>
+        <input class="input100" type="text" name="grade1" placeholder="Nota ..">
+        <span class="focus-input100"></span>
+      </div>
+      <br>
+      <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz" align="center">
+        <span class="label-input100">Critério 2 ..</span>
+        <input class="input100" type="text" name="grade2" placeholder="Nota ..">
+        <span class="focus-input100"></span>
+      </div>
+      <br>
+      <div class="wrap-input100 validate-input" data-validate="Username is required" align="center" align="center">
+        <span class="label-input100">Critério 3 ..</span>
+        <input class="input100" type="text" name="grade3" placeholder="Nota ..">
+        <span class="focus-input100"></span>
+      </div>
+      <br>
+      <div class="wrap-input100 validate-input" data-validate="Username is required" align="center" align="center">
+        <span class="label-input100">Critério 4 ..</span>
+        <input class="input100" type="text" name="grade4" placeholder="Nota ..">
+        <span class="focus-input100"></span>
+      </div>
+      <br>
+      <div class="wrap-input100 validate-input" data-validate="Username is required" align="center" align="center">
+        <span class="label-input100">Critério 5 ..</span>
+        <input class="input100" type="text" name="grade5" placeholder="Nota ..">
+        <span class="focus-input100"></span>
+      </div>
+      <br>
+      <div class="wrap-input100 validate-input" data-validate="Username is required" align="center" align="center">
+        <span class="label-input100">Nota Final ..</span>
+        <input class="input100" type="text" name="grade" placeholder="Nota Final ..">
+        <span class="focus-input100"></span>
+      </div>
 
-    <div class="wrap-input100 validate-input" data-validate="Username is required" align="center" align="center">
-      <span class="label-input100">Critério 5 ..</span>
-      <input class="input100" type="text" name="username" placeholder="Nota ..">
-      <span class="focus-input100"></span>
-    </div>
+      <br><br>
 
-    <div class="wrap-input100 validate-input" data-validate="Username is required" align="center" align="center">
-      <span class="label-input100">Nota Final ..</span>
-      <input class="input100" type="text" name="username" placeholder="Nota Final ..">
-      <span class="focus-input100"></span>
-    </div>
-
-    <br><br>
-    <form method="POST" action="uploadFile" enctype="multipart/form-data" align="center">
       <center><strong>Submeter Redação Corrigida:</strong></center>
-      <center><input type="file" name="file" /></center>
+      <center><input type="file" name="sampleFile" /></center>
       <center><input type="submit"  value="Upload"/></center>
     </form>
     <br><br>
