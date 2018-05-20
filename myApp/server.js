@@ -198,6 +198,31 @@ app.get('/redacoesCorrigidas', function(req, res) {
   console.log("não deu certo")
 })
 
+app.get('/acessosDeCorretor', function(req, res) {
+    var User = models.user
+
+    User.findAll({
+      where: {
+        role: 'corretor',
+        about: req.user.about
+      }
+    }).then(function(corretor) {
+      if (!corretor) {
+        return res.send("not found")
+      }
+      console.log(corretor)
+      res.render('atividadeCorretores.ejs', {corretor: corretor});
+    }).catch(function(err) {
+      console.log("error: ", err)
+    })
+    console.log("nao deu certo")
+
+});
+
+app.get('/irPraDistribuicao', function(req, res) {
+  res.render('distribuirRedacoes.ejs')
+});
+
 //load passport strategies
 
 require('./config/passport/passport.js')(passport, models.user);

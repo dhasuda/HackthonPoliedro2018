@@ -1,0 +1,14 @@
+<ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+
+  <li class="list-unstyled-item list-hours-item d-flex">
+    <center><strong>RM Corretores</strong> </center>
+  </li>
+
+  <% corretor.forEach(function(comp) { %>
+    <li class="list-unstyled-item list-hours-item d-flex">
+      <strong><%= comp.email %></strong>
+      <!-- <center><strong><%= comp.type %></strong> </center> -->
+      <span class="ml-auto"> <%= comp.firstname %> </span>
+    </li>
+  <% }) %>
+</ul>
