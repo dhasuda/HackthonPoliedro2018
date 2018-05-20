@@ -151,7 +151,7 @@ module.exports = function(app, models) {
         filename = sampleFile.name;
         console.log("############## USER RM = " + req.user.email)
 
-        filename = req.user.email + "&&" + req.body.week + "&&" + req.body.type + ".png";
+        filename = req.body.studentRm + "&&" + req.body.week + "&&" + req.body.type + ".png";
     // Use the mv() method to place the file somewhere on your server
     sampleFile.mv('./compositions/' +  filename, function(err) {
       if (err)

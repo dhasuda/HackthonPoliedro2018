@@ -1,0 +1,15 @@
+<ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+
+  <li class="list-unstyled-item list-hours-item d-flex">
+    <center><strong>Redação</strong> </center>
+    <span class="ml-auto">Nota</span>
+  </li>
+
+  <% composition.forEach(function(comp) { %>
+    <li class="list-unstyled-item list-hours-item d-flex">
+      <strong><span class="ml-auto"><a href=<%="/downloadComposition/" + comp.studentEmail + "/" + comp.week + "/" + comp.type %> ><%= comp.type %></a></span></strong>
+      <!-- <center><strong><%= comp.type %></strong> </center> -->
+      <span class="ml-auto"><%= comp.grade %> = <%= comp.grade1 %> + <%= comp.grade2 %> + <%= comp.grade3 %> + <%= comp.grade4 %> + <%= comp.grade5 %> </span>
+    </li>
+  <% }) %>
+</ul>

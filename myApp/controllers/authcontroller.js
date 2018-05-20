@@ -34,7 +34,7 @@ exports.dashboard = function(req, res) {
       res.render("dash/homeTeacher.ejs")
     }
     else if (req.user.role == "coordenador") {
-      res.send("Sou um coordenador")
+      res.render("homeCoodinator.ejs")
     }
     else {
       res.render('dashboard.ejs');
