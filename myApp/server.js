@@ -175,6 +175,29 @@ app.get('/redacoesEntregues', function(req, res) {
   console.log("não deu certo")
 })
 
+app.get('/redacoesCorrigidas', function(req, res) {
+  var Composition = models.composition
+
+  Composition.findAll({
+      where: {
+          about: req.user.about,
+          status: 'corrected'
+      }
+  }).then(function(composition) {
+
+      if (!composition) {
+        return res.send("Not found")
+      }
+      console.log(composition)
+      res.render('redacoesEntregues.ejs', {composition: composition});
+  }).catch(function(err) {
+
+      console.log("Error:", err);
+
+  });
+  console.log("não deu certo")
+})
+
 //load passport strategies
 
 require('./config/passport/passport.js')(passport, models.user);
