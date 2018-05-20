@@ -1,5 +1,9 @@
 var exports = module.exports = {}
 
+exports.presignup = function(req, res) {
+    res.render('presignup.ejs');
+}
+
 exports.signup = function(req, res) {
     res.render('signout.ejs');
 }
