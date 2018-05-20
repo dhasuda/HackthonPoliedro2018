@@ -87,7 +87,15 @@
         Redação
         <span class="ml-auto">Baixar Redação</span>
       </li>
-      <li class="list-unstyled-item list-hours-item d-flex">
+
+      <% composition.forEach(function(comp) { %>
+        <li class="list-unstyled-item list-hours-item d-flex">
+          <%= comp.type %> - <%= comp.week %> - <%= comp.studentEmail %>
+          <span class="ml-auto"><a href="#">Download</a></span>
+        </li>
+      <% }) %>
+
+      <!-- <li class="list-unstyled-item list-hours-item d-flex">
         ITA 7a_Sem 190762
         <span class="ml-auto"><a href="#">Download</a></span>
       </li>
@@ -110,7 +118,7 @@
       <li class="list-unstyled-item list-hours-item d-flex">
         Enem 8a_Sem 903425
         <span class="ml-auto"><a href="#">Download</a></span>
-      </li>
+      </li> -->
     </ul>
 
     <br>

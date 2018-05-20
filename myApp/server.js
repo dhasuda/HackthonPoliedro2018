@@ -109,7 +109,27 @@ app.get('/aboutTeacher', function(req, res) {
 });
 
 app.get('/storeTeacher', function(req, res) {
-    res.render('dash/storeTeacher.ejs')
+
+  var Composition = models.composition
+
+  Composition.findAll({
+      where: {
+          correctorEmail: req.user.email,
+          status: 'notCorrected'
+      }
+  }).then(function(composition) {
+
+      if (!composition) {
+        return res.send("Not found")
+      }
+      console.log(composition)
+      res.render('dash/storeTeacher.ejs', {composition: composition});
+  }).catch(function(err) {
+
+      console.log("Error:", err);
+
+  });
+  console.log("não deu certo")
 });
 
 app.get('/teste', function(req, res) {
