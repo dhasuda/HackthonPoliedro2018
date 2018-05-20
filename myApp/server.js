@@ -61,8 +61,24 @@ var authRoute = require('./routes/auth.js')(app,passport);
 var fileRoute = require('./routes/file.js')(app, models);
 var utilsRoute = require('./routes/utils.js')(app);
 
+app.get('/aboutStudent', function(req, res) {
+    res.render('dash/aboutStudent.ejs')
+});
+
+app.get('/productsStudent', function(req, res) {
+    res.render('dash/productsStudent.ejs')
+});
+
+app.get('/productsStudent', function(req, res) {
+    res.render('dash/productsStudent.ejs')
+});
+
+app.get('/storeStudent', function(req, res) {
+    res.render('dash/storeStudent.ejs')
+});
+
 app.get('/teste', function(req, res) {
-    res.render('login/sign_upCorretor.ejs')
+    res.render('dash/homeStudent.ejs')
 });
 
 //load passport strategies
