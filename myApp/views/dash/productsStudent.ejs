@@ -79,27 +79,22 @@
       </div>
     </section>
 
-    <div class="wrap-input100 validate-input" data-validate="Name is required" align="center">
-      <span class="label-input100">Tipo</span>
-      <center><input class="input100" type="text" name="name" placeholder="Tipo da Redação..."></center>
-      <span class="focus-input100"></span>
-    </div>
+    <form method="POST" action="http://localhost:3000/uploadComposition" enctype="multipart/form-data" align="center">
 
-    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz" align="center">
-      <span class="label-input100">Semana</span>
-      <center><input class="input100" type="text" name="email" placeholder="Semana..."></center>
-      <span class="focus-input100"></span>
-    </div>
+      <div class="wrap-input100 validate-input" data-validate="Name is required" align="center">
+        <span class="label-input100">Tipo</span>
+        <center><input class="input100" type="text" name="type" placeholder="Tipo da Redação..."></center>
+        <span class="focus-input100"></span>
+      </div>
 
-    <div class="wrap-input100 validate-input" data-validate="Username is required" align="center" align="center">
-      <span class="label-input100">Coletânea</span>
-      <center><input class="input100" type="text" name="username" placeholder="Coletânea..."></center>
-      <span class="focus-input100"></span>
-    </div>
+      <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz" align="center">
+        <span class="label-input100">Semana</span>
+        <center><input class="input100" type="text" name="week" placeholder="Semana..."></center>
+        <span class="focus-input100"></span>
+      </div>
 
-    <form method="POST" action="uploadFile" enctype="multipart/form-data" align="center">
       <center><strong>Upload file:</strong></center>
-      <center><input type="file" name="file" /></center>
+      <center><input type="file" name="sampleFile" /></center>
       <center><input type="submit"  value="Upload"/></center>
     </form>
 
@@ -110,7 +105,7 @@
         <div class="product-item">
           <div class="product-item-title d-flex">
             <div class="bg-faded p-5 d-flex ml-auto rounded">
-              <h2 class="section-heading mb-0">
+              <h2 class="section-heading mb-0s">
                 <span class="section-heading-upper">Delicious Treats, Good Eats</span>
                 <span class="section-heading-lower">Bakery &amp; Kitchen</span>
               </h2>
