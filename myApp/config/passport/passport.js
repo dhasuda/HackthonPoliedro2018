@@ -44,8 +44,8 @@ module.exports = function(passport, user) {
         },
 
 
-
         function(req, email, password, done) {
+
             var generateHash = function(password) {
                 return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
             };
@@ -94,7 +94,7 @@ module.exports = function(passport, user) {
                         }
 
                         if (newUser) {
-
+                          
                             return done(null, newUser);
 
                         }

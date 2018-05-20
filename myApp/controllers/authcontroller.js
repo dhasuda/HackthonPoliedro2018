@@ -25,8 +25,19 @@ exports.signin = function(req, res) {
 }
 
 exports.dashboard = function(req, res) {
-  
-    res.render('dashboard.ejs');
+
+    if (req.user.role == "aluno") {
+      res.send("sou um aluno")
+    }
+    else if (req.user.role == "corretor") {
+      res.send("Sou um corretor")
+    }
+    else if (req.user.role == "coordenador") {
+      res.send("Sou um coordenador")
+    }
+    else {
+      res.render('dashboard.ejs');
+    }
 
 }
 
