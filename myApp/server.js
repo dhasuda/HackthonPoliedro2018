@@ -77,6 +77,10 @@ app.get('/storeStudent', function(req, res) {
     res.render('dash/storeStudent.ejs')
 });
 
+app.get('/homeStudent', function(req, res) {
+    res.render('dash/homeStudent.ejs')
+});
+
 app.get('/teste', function(req, res) {
     res.render('dash/homeStudent.ejs')
 });
