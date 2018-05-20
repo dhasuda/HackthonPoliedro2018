@@ -97,7 +97,7 @@ module.exports = function(app, models) {
 
         let sampleFile = req.files.sampleFile;
             filename = sampleFile.name;
-            filename = req.user.email + "&&" + req.body.week + "&&" + req.body.type + ".png";
+            filename = req.body.email + "&&" + req.body.week + "&&" + req.body.type + ".png";
 
         sampleFile.mv('./compositions/' +  filename, function(err) {
           if (err)
