@@ -100,8 +100,20 @@ app.get('/homeStudent', function(req, res) {
     res.render('dash/homeStudent.ejs')
 });
 
+app.get('/homeTeacher', function(req, res) {
+    res.render('dash/homeTeacher.ejs')
+});
+
+app.get('/aboutTeacher', function(req, res) {
+    res.render('dash/aboutTeacher.ejs')
+});
+
+app.get('/storeTeacher', function(req, res) {
+    res.render('dash/storeTeacher.ejs')
+});
+
 app.get('/teste', function(req, res) {
-    res.render('dash/homeStudent.ejs')
+    res.render('dash/homeTeacher.ejs')
 });
 
 //load passport strategies
