@@ -1,12 +1,12 @@
 # HackthonPoliedro2018
 
+<br>
+
 **Teacher website:**
 <br>
 <br>
 <img src="image/essay.gif">
 
-<br>
-<br>
 <br>
 <br>
 
@@ -22,7 +22,6 @@
 <img src="image/essay02.gif" width="45%">
 </div>
 
-<br>
 <br>
 <br>
 
